@@ -1,6 +1,6 @@
 CC = g++
-all: src/main.cpp src/test.cpp
-	${CC} ./src/main.cpp ./src/test.cpp -o ./build/main
+all: src/main.cpp src/file-io/file-io.cpp
+	${CC} ./src/main.cpp ./src/file-io/file-io.cpp -o ./build/mips
 
 clean:
 	rm ./build/*
