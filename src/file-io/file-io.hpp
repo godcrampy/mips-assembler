@@ -8,10 +8,16 @@
 
 class FileIO
 {
+private:
+  std::string instruction_path;
+  std::string register_path;
+  std::string memory_path;
+
 public:
-  std::vector<std::string> get_instruction_vector(const std::string &path = "main.mips");
-  std::vector<std::string> get_register_vector(const std::string &path = "register.reg");
-  std::vector<std::string> get_memory_vector(const std::string &path = "memory.ram");
+  FileIO(std::string instruction_path = "main.mips", std::string register_path = "register.reg", std::string memory_path = "memory.ram");
+  std::vector<std::string> fetch_instruction_vector();
+  std::vector<std::string> fetch_register_vector();
+  std::vector<std::string> fetch_memory_vector();
 };
 
 #endif
