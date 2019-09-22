@@ -8,8 +8,12 @@
 
 int main(int argc, char const *argv[])
 {
-  // TODO: Make arguments command line
-  FileIO file("test/test.mips", "test/register.reg", "test/memory.ram");
+  if (argc != 5)
+  {
+    std::cout << "Pass .mips .reg .ram file as arguments" << std::endl;
+    return 1;
+  }
+  FileIO file(*(argv + 1), *(argv + 2), *(argv + 3));
   auto instructions = file.fetch_instruction_vector();
   auto registers = file.fetch_register_vector();
   auto memory = file.fetch_memory_vector();
