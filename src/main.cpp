@@ -8,7 +8,7 @@
 
 int main(int argc, char const *argv[])
 {
-  if (argc != 5)
+  if (argc != 4)
   {
     std::cout << "Pass .mips .reg .ram file as arguments" << std::endl;
     return 1;

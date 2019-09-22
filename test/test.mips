@@ -1,5 +1,5 @@
-addi	$t0, $zero, 0			# $t0 = $zero + 0
+lw	$t0, 0($s1)
 addi $t1, $zero, 6
-while: log loop 0 $t0
+while: log loop, 0, $t0
 addi $t0, $t0, 1
 bne $t0, $t1, while
