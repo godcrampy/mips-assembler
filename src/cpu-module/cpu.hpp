@@ -13,7 +13,7 @@ private:
   RegisterModule registers;
   std::vector<std::vector<std::string>> instructions;
   int program_counter;
-  std::map<long, std::string> label_map;
+  std::map<std::string, long> label_map;
 
 public:
   CPU(RamModule, RegisterModule, std::vector<std::vector<std::string>>);
