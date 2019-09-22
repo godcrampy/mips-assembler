@@ -20,9 +20,11 @@ std::vector<std::string> FileIO::fetch_instruction_vector()
     if (line_data.size() > 0)
     {
       // remove comments, tabs and commas
-      line_data = line_data.substr(0, line_data.find("#"));
-      std::replace(line_data.begin(), line_data.end(), '\t', ' ');
-      line_data.erase(std::remove(line_data.begin(), line_data.end(), ','), line_data.end());
+      line_data = line_data.substr(0, line_data.find("#"));                                   // remove stuff after #
+      std::replace(line_data.begin(), line_data.end(), '\t', ' ');                            // replace tabs with spaces
+      std::replace(line_data.begin(), line_data.end(), '(', ' ');                             // repace ( with space
+      line_data.erase(std::remove(line_data.begin(), line_data.end(), ','), line_data.end()); // remove ,
+      line_data.erase(std::remove(line_data.begin(), line_data.end(), ')'), line_data.end()); // remove )
       instructions.push_back(line_data);
     }
   }

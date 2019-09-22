@@ -16,7 +16,8 @@ public:
   {
     return this->$s;
   }
-  void set_register(std::string, std::string);
+  void set_register(std::string name, std::string value);
+  void set_register(std::string name, long value);
   long get_register(std::string);
 };
 
