@@ -110,18 +110,18 @@ void CPU::execute()
       auto value1 = this->registers.get_register(a);
       auto value2 = this->registers.get_register(b);
       if (value1 == value2)
-        i = this->label_map.find(c)->second;
+        i = this->label_map[c];
     }
     else if (operation == "bne")
     {
       auto value1 = this->registers.get_register(a);
       auto value2 = this->registers.get_register(b);
       if (value1 != value2)
-        i = this->label_map.find(c)->second;
+        i = this->label_map[c];
     }
     else if (operation == "j")
     {
-      i = this->label_map.find(b)->second;
+      i = this->label_map[b];
     }
     else
     {
