@@ -27,5 +27,6 @@ int main(int argc, char const *argv[])
   RamModule ram(memory_table, 1000);
   CPU cpu(ram, reg, instruction_table);
   cpu.execute();
+  cpu.print_memory();
   return 0;
 }

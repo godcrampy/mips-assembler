@@ -14,7 +14,7 @@ public:
   long get_memory(std::string);
   void set_memory(long address, long value);
   void set_memory(std::string, std::string);
-
+  void print_memory();
   auto get_memory()
   {
     return this->memory;
