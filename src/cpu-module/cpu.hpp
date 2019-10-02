@@ -18,7 +18,7 @@ private:
 public:
   CPU(RamModule, RegisterModule, std::vector<std::vector<std::string>>);
   void execute();
-  void print_memory();
+  void print_status();
 };
 
 #endif

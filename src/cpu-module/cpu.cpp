@@ -131,7 +131,8 @@ void CPU::execute()
   }
 }
 
-void CPU::print_memory()
+void CPU::print_status()
 {
   this->memory.print_memory();
+  this->registers.print_registers();
 }
