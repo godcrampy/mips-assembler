@@ -1,4 +1,5 @@
 #include "ram-module.hpp"
+#include <iostream>
 
 RamModule::RamModule(std::vector<std::vector<std::string>> memory_table, long bytes) : memory(bytes / 4, 0)
 {
@@ -24,4 +25,12 @@ void RamModule::set_memory(long address, long value)
 void RamModule::set_memory(std::string address, std::string value)
 {
   this->set_memory(std::stol(address), std::stol(value));
+}
+
+void RamModule::print_memory()
+{
+  std::cout << "Memory Status" << std::endl;
+  for (auto i = 0; i < this->memory.size(); ++i)
+    if (this->memory[i])
+      std::cout << i * 4 << " : " << this->memory[i] << std::endl;
 }

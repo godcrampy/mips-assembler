@@ -130,3 +130,8 @@ void CPU::execute()
     }
   }
 }
+
+void CPU::print_memory()
+{
+  this->memory.print_memory();
+}
