@@ -1,4 +1,5 @@
 #include "register-module.hpp"
+#include <iostream>
 
 RegisterModule::RegisterModule(std::vector<std::vector<std::string>> register_table)
 {
@@ -29,4 +30,15 @@ void RegisterModule::set_register(std::string name, long value)
     this->$t[name[2] - '0'] = value;
   if (name[1] == 's')
     this->$s[name[2] - '0'] = value;
+}
+
+void RegisterModule::print_registers()
+{
+  std::cout << "Register Status" << std::endl;
+  for (auto i = 0; i < this->$s.size(); ++i)
+    if (this->$s[i])
+      std::cout << "$s" << i << " : " << this->$s[i] << std::endl;
+  for (auto i = 0; i < this->$t.size(); ++i)
+    if (this->$t[i])
+      std::cout << "$t" << i << " : " << this->$t[i] << std::endl;
 }
